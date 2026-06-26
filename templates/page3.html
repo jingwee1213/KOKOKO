@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>第三頁</h1>
+
+  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead>
+      <tr>
+        <th>編號</th>
+        <th>人物</th>
+        <th>韓文</th>
+        <th>中文</th>
+        <th>播放</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>靖妤</td>
+        <td>이름이 뭐예요?</td>
+        <td>你叫什麼名字？</td>
+        <td><button type="button" onclick="playAudio(1)">播放 1</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>昕柔</td>
+        <td>제 이름은 신루입니다.</td>
+        <td>我叫昕柔。</td>
+        <td><button type="button" onclick="playAudio(17)">播放 2</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>靖妤</td>
+        <td>어느 나라 충셴이에요?</td>
+        <td>你是哪一國人？</td>
+        <td><button type="button" onclick="playAudio(3)">播放 3</button></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>昕柔</td>
+        <td>대만 사람입니다.</td>
+        <td>我是台灣人。</td>
+        <td><button type="button" onclick="playAudio(4)">播放 4</button></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>靖妤</td>
+        <td>무슨 일 하세요?</td>
+        <td>您是做什麼工作的？</td>
+        <td><button type="button" onclick="playAudio(5)">播放 5</button></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>昕柔</td>
+        <td>저는 대학생입니다.</td>
+        <td>我是大學生。</td>
+        <td><button type="button" onclick="playAudio(6)">播放 6</button></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>靖妤</td>
+        <td>좋아하는 음식이 뭐예요?</td>
+        <td>你喜歡什麼食物？</td>
+        <td><button type="button" onclick="playAudio(7)">播放 7</button></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>昕柔</td>
+        <td>불고기를 좋아해요</td>
+        <td>我喜歡烤肉。</td>
+        <td><button type="button" onclick="playAudio(18)">播放 8</button></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>淙賢</td>
+        <td>이 사람은 신루밍입니다.</td>
+        <td>他是昕柔。</td>
+        <td><button type="button" onclick="playAudio(19)">播放 9</button></td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>淙賢</td>
+        <td>대만 사람입니다.</td>
+        <td>他是台灣人。</td>
+        <td><button type="button" onclick="playAudio(10)">播放 10</button></td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>淙賢</td>
+        <td>대학생입니다.</td>
+        <td>他是大學生。</td>
+        <td><button type="button" onclick="playAudio(11)">播放 11</button></td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>淙賢</td>
+        <td>불고기를 좋아합니다.</td>
+        <td>他喜歡烤肉。</td>
+        <td><button type="button" onclick="playAudio(20)">播放 12</button></td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>淙賢</td>
+        <td>감사합니다</td>
+        <td>謝謝大家。</td>
+        <td><button type="button" onclick="playAudio(13)">播放 13</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <audio id="audio-player" controls style="margin-top: 16px; width: 100%; display: none;"></audio>
+  <script>
+    function playAudio(number) {
+      var player = document.getElementById('audio-player');
+      player.src = "{{ url_for('static', filename='audio/') }}" + number + '.mp3';
+      player.style.display = 'block';
+      player.play();
+    }
+  </script>
+{% endblock %}
