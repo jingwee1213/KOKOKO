@@ -109,12 +109,12 @@
   </table>
 
   <audio id="audio-player" controls style="margin-top: 16px; width: 100%; display: none;"></audio>
-  <script>
+    <script>
     function playAudio(number) {
       var player = document.getElementById('audio-player');
-      player.src = "{{ url_for('static', filename='audio/') }}" + number + '.mp3';
+      player.src = `/static/audio/${number}.mp3`;
       player.style.display = 'block';
       player.play();
     }
-  </script>
+    </script>
 {% endblock %}
